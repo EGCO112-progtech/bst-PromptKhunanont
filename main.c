@@ -14,14 +14,14 @@ for ( i = 1; i < argc; ++i ) {
   } // end for
    // traverse the tree preOrder
     printf("\npreOrder\n" );
-    preOrder( rootPtr );*/
+    preOrder( b.root );
 
    // traverse the tree inOrder
     printf("\ninOrder\n" );
     inOrder(b.root);
 
    // traverse the tree postOrder
-    printf("\npostnOrder\n" );   postOrder( rootPtr );
+    printf("\npostnOrder\n" ); 
     postOrder(b.root);  
 
 
