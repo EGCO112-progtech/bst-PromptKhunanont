@@ -18,19 +18,19 @@ typedef struct {
 void insertNode( BST *, int );
 
 void insertNode_R(TreeNodePtr * t,int value){
-  if(t*==NULL){
-   t* = (TreeNodePtr)malloc(sizeof(struct TreeNode));
-	 if(t*){
-		(t*)->leftPtr=NULL;
-		(t*)->rightPtr=NULL;
-		(t*)->data=value;
+  if(*t==NULL){
+   *t = (TreeNodePtr)malloc(sizeof(struct TreeNode));
+	 if(*t){
+		(*t)->leftPtr=NULL;
+		(*t)->rightPtr=NULL;
+		(*t)->data=value;
    }
   }
   else{
-     if((t*)->data>=value) //left
-        insertNode_R(&(t*)->leftPtr,value);
+     if((*t)->data>=value) //left
+        insertNode_R(&(*t)->leftPtr,value);
      else //right
-        insertNode_R(&(t*)->rightPtr,value);
+        insertNode_R(&(*t)->rightPtr,value);
    }
 }
 
@@ -110,4 +110,21 @@ void postOrder( TreeNodePtr treePtr )
 
       printf("%3d",treePtr->data);
    }
+}
+
+void treeOutput( TreeNodePtr treePtr, int n)
+{
+   if (treePtr != NULL){
+      
+      treeOutput(treePtr->rightPtr, n+1);
+
+      for(int i=0;i<n*5;i++){
+         printf("  ");
+      }
+      printf("%3d\n",treePtr->data);
+
+      treeOutput(treePtr->leftPtr, n+1);
+      
+   }
+
 }
