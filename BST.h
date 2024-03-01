@@ -119,7 +119,7 @@ void treeOutput( TreeNodePtr treePtr, int n)
       treeOutput(treePtr->rightPtr, n+1);
 
       for(int i=0;i<n*5;i++){
-         printf("    ");
+         printf("    git ");
       }
       printf("%3d\n",treePtr->data);
 
